@@ -1,0 +1,13 @@
+{
+  "name": "local-learning-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local learning notebook with a topic and relationship map",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "test": "node scripts/run-tests.mjs",
+    "prepare:release": "node scripts/prepare-release.mjs"
+  }
+}

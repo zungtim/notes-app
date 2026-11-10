@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5f5f4">
+  <title>笔记 · 本地学习笔记</title>
+  <link rel="icon" href="/favicon.svg?v=20261006-2" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/graph.css">
+  <link rel="stylesheet" href="/pane-layout.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <a class="brand" href="#" id="brand-home" aria-label="笔记首页"><span class="brand-mark">记</span><span><strong>笔记</strong><small>本地学习笔记</small></span></a>
+      <button class="capture-button" id="capture-sidebar"><span>＋</span> 新建笔记 <kbd>Ctrl N</kbd></button>
+      <div class="nav-caption">我的学习</div>
+      <nav class="primary-nav">
+        <button data-view="home" class="nav-item active"><span data-icon="spaces"></span>主题</button>
+        <button data-view="all" class="nav-item"><span data-icon="notes"></span>全部笔记<span class="nav-count" id="all-count">0</span></button>
+        <button data-view="questions" class="nav-item"><span data-icon="question"></span>待解问题<span class="nav-count" id="question-count">0</span></button>
+        <button data-view="review" class="nav-item"><span data-icon="clock"></span>待复习</button>
+      </nav>
+      <div class="nav-caption topics-caption">我的主题<button class="icon-button" id="topic-sidebar" aria-label="新建主题">＋</button></div>
+      <nav id="topic-nav" class="topic-nav" aria-label="主题"></nav>
+      <div class="sidebar-bottom">
+        <div class="local-card"><span class="local-dot"></span><strong>保存在本机</strong><p>离线使用</p></div>
+        <button class="nav-item" id="backup-button"><span data-icon="download"></span>导入与备份</button>
+        <button class="nav-item" id="help-button"><span data-icon="help"></span>使用指南</button>
+
+        <div class="sidebar-footer"><span>笔记 v1.0</span></div>
+      </div>
+    </aside>
+    <div id="sidebar-splitter" class="pane-splitter sidebar-splitter" role="separator" aria-orientation="vertical" aria-label="调整侧栏宽度" aria-controls="workspace" tabindex="0" title="左右拖动调整侧栏宽度；双击恢复默认"></div>
+    <div class="workspace" id="workspace">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="展开导航" data-icon="menu"></button>
+        <div class="breadcrumbs" id="breadcrumbs">笔记 / 主题</div>
+        <div class="topbar-actions"><button class="search-trigger" id="search-button"><span data-icon="search"></span><span>搜索笔记、标签、来源</span><kbd>Ctrl K</kbd></button><button class="save-status" id="save-status" title="点击重试保存"><span class="local-dot"></span><span>正在载入</span></button></div>
+      </header>
+      <main id="main-content" aria-label="学习内容"><div class="loading-state">正在打开笔记…</div></main>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="import-file" accept=".json,application/json" hidden>
+</body>
+</html>

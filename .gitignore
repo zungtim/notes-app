@@ -1,0 +1,25 @@
+# Personal notebook, original images, confirmed rules, backups and archives
+/data/
+/记录约定.md
+
+# Launcher-owned processes and current logs
+/runtime/
+
+# Personal delivery reports, screenshots and exported study notes
+/成果产出/
+
+# Standalone development workspaces and legacy test output
+/_workspace/
+/.dev-workspace/
+/test-artifacts/
+/node_modules/
+/coverage/
+
+# Local credentials and tool configuration
+.env
+.env.*
+*.log
+*.tmp
+__pycache__/
+.DS_Store
+Thumbs.db
